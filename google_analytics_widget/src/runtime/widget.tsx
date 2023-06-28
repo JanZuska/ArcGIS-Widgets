@@ -2,20 +2,20 @@ import { AllWidgetProps } from 'jimu-core'
 import { IMConfig } from '../config'
 
 const Widget = (props: AllWidgetProps<IMConfig>) => {
-  const connectToGoogleAnalytics = (googleAnalyticId: string) => {
+  const connectToGoogleAnalytics = (googleAnalyticsId: string) => {
     const mainScript = document.createElement('script');
-    mainScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + googleAnalyticId;
+    mainScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + googleAnalyticsId;
     mainScript.async = true;
     document.head.appendChild(mainScript);
 
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', googleAnalyticId);
+    gtag('config', googleAnalyticsId);
   }
 
-  const googleAnalyticId = props.config.googleAnalyticId;
-  connectToGoogleAnalytics(googleAnalyticId);
+  const googleAnalyticsId = props.config.googleAnalyticId;
+  connectToGoogleAnalytics(googleAnalyticsId);
 
   return false
 }

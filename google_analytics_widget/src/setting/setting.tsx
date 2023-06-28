@@ -8,7 +8,7 @@ export default function (props: AllWidgetSettingProps<IMConfig>) {
 
   const googleAnalyticsIdChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = event.target.value;
-    props.onSettingChange({id: props.id, config: props.config.set('googleAnalyticId', inputValue)})
+    props.onSettingChange({id: props.id, config: props.config.set('googleAnalyticsId', inputValue)})
   }
 
   return (
@@ -17,7 +17,7 @@ export default function (props: AllWidgetSettingProps<IMConfig>) {
 
         <TextInput
           type='text'
-          defaultValue={props.config.googleAnalyticId}
+          defaultValue={props.config.googleAnalyticsId}
           className='mx-auto p-2'
           placeholder='Google analytics ID'
           onChange={googleAnalyticsIdChange}

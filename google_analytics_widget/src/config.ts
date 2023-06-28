@@ -1,7 +1,7 @@
 import { ImmutableObject } from 'seamless-immutable'
 
 export interface Config {
-  googleAnalyticId: string
+  googleAnalyticsId: string
 }
 
 export type IMConfig = ImmutableObject<Config>
