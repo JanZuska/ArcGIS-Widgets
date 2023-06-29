@@ -1,5 +1,7 @@
+/** @jsx jsx */
 import { AllWidgetProps } from 'jimu-core'
 import { IMConfig } from '../config'
+import { jsx } from 'jimu-core'
 
 const Widget = (props: AllWidgetProps<IMConfig>) => {
   const connectToGoogleAnalytics = (googleAnalyticsId: string) => {
@@ -16,8 +18,10 @@ const Widget = (props: AllWidgetProps<IMConfig>) => {
 
   const googleAnalyticsId = props.config.googleAnalyticId;
   connectToGoogleAnalytics(googleAnalyticsId);
-
-  return false
+  
+  return (
+    <img src={ require('../google-analytics.png') } style={{ width: 120, height: 41.3}}/>
+  )
 }
 
 export default Widget
